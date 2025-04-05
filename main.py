@@ -12,8 +12,6 @@ load_dotenv()
 # Replace the single TARGET_GUILD_ID with a list of guild IDs
 TARGET_GUILD_IDS = [
     492024679998160907,  # First guild to monitor
-    613394789882134529, # Add more guild IDs here
-    1226142696926609488 
     
 ]
 
