@@ -16,7 +16,7 @@ TARGET_GUILD_IDS = [
 ]
 
 # Add the notification channel ID where you want to send alerts
-NOTIFICATION_CHANNEL_ID = 1358119575258005548
+NOTIFICATION_CHANNEL_ID = 1358197044036112395
 
 # Get token from environment variable
 token = os.getenv("USER_AUTH_TOKEN")
