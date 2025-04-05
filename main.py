@@ -13,8 +13,8 @@ load_dotenv()
 TARGET_GUILD_IDS = [
     492024679998160907,  # First guild to monitor
     613394789882134529, # Add more guild IDs here
-    1226142696926609488 # 123456789012345678,  # Example second guild
-    # 987654321098765432,  # Example third guild
+    1226142696926609488 
+    
 ]
 
 # Add the notification channel ID where you want to send alerts
