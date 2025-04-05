@@ -6,6 +6,8 @@ import asyncio
 import json
 import datetime
 from datetime import timedelta
+import threading
+from http.server import BaseHTTPRequestHandler, HTTPServer
 
 load_dotenv()
 
@@ -286,5 +288,22 @@ async def check_for_new_members():
             import traceback
             traceback.print_exc()
 
+
+# Create a dummy web server to please Render
+
+
+class Handler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.end_headers()
+        self.wfile.write(b"Selfbot is running.")
+
+def run_server():
+    port = int(os.environ.get("PORT", 8080))  # Render expects this
+    server = HTTPServer(("0.0.0.0", port), Handler)
+    server.serve_forever()
+
+# Start the dummy web server in a background thread
+threading.Thread(target=run_server).start()
 # Run the client with your user token
 client.run(token)
